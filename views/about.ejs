@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us - <%= blogName %></title>
+</head>
+<body>
+    <header>
+        <h1>About Us</h1>
+        <!-- <nav>
+            <ul>
+                <li><a href="/" class="<%= currentRoute === '/' ? 'active' : '' %>">Home</a></li>
+                <li><a href="/about" class="<%= currentRoute === '/about' ? 'active' : '' %>">About</a></li>
+                <li><a href="/contact" class="<%= currentRoute === '/contact' ? 'active' : '' %>">Contact</a></li>
+            </ul>
+        </nav> -->
+    </header>
+
+    <section>
+        <h2>Welcome to <%= blogName %>!</h2>
+        <p>At <%= blogName %>, we are passionate about <%= blogFocus %>. Our mission is to <%= mission %> our readers through insightful and engaging content.</p>
+    </section>
+
+
+    <section>
+        <h2>What We Offer</h2>
+        <ul>
+            <% contentTypes.forEach(function(contentType) { %>
+                <li><strong><%= contentType.type %>:</strong> <%= contentType.description %></li>
+            <% }); %>
+        </ul>
+    </section>
+
+    
+
+    <section>
+        <h2>Join Our Community</h2>
+        <p>We love connecting with our readers! Join our community and be part of the conversation. Follow us on:</p>
+        <ul>
+            <% socialMedia.forEach(function(platform) { %>
+                <li><a href="<%= platform.link %>"><%= platform.name %></a></li>
+            <% }); %>
+        </ul>
+        <p>Subscribe to our newsletter to stay updated with our latest posts and special offers.</p>
+    </section>
+
+    <section>
+        <h2>Get In Touch</h2>
+        <p>We’re always excited to hear from you. Whether you have feedback, questions, or collaboration ideas, feel free to reach out to us at <a href="mailto:<%= contactEmail %>"><%= contactEmail %></a>.</p>
+    </section>
+
+    <footer>
+        <p>Thank you for visiting <%= blogName %>. We hope you enjoy our content as much as we enjoy creating it for you.</p>
+        <p>Happy reading!</p>
+        <p><%= yourName %><br><%= blogName %></p>
+    </footer>
+</body>
+</html>
+
